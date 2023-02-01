@@ -30,6 +30,21 @@
                <a mat-button routerLink="/customers">🚀 Customers Demo</a> 
                <a mat-button routerLink="/login">🔐 Login</a> 
             </div>
+            
+            <!-- Fun Additional Menu Button for Large Screens -->
+            <button mat-icon-button [mat-menu-trigger-for]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu>
+                <a mat-menu-item href="https://github.com/v3nk3y">
+                    <i>😎</i>
+                    <span>My GitHub Profile</span>
+                </a>
+                <a mat-menu-item href="/">
+                    <i>🏠</i>
+                    <span>App Home</span>
+                </a>
+            </mat-menu>
         </mat-toolbar>
         <ng-content></ng-content>
     </mat-sidenav-content>
