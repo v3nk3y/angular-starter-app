@@ -8,10 +8,10 @@ import { SharedModule } from './shared/shared.module';
 import { HomePageComponent } from './home-page/home-page.component';
 
 // Firebase imports
-import { FirestoreModule, provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { AuthModule, provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app'
+import { FirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
 
 
 @NgModule({
@@ -24,11 +24,9 @@ import { environment } from 'src/environments/environment';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule, 
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
     FirestoreModule,
-    AuthModule,
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
