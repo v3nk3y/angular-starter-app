@@ -14,10 +14,16 @@
 
     <div class="login">
         <h1>Login</h1>
-        <button type="button" mat-raised-button (click)="loginWithGoogle()">
+        <button type="button" mat-raised-button (click)="authService.GoogleAuth()">
           Log in with Google
         </button>
     </div>
+    <div *ngIf="authService.userData as user" class="logout">
+        <p>Logged in as <strong>{{ user.email }}</strong></p> 
+        <button mat-stroked-button>
+            Logout
+        </button>
+    </div> 
 </main>
 
 

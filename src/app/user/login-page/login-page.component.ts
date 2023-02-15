@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GoogleAuthProvider } from '@angular/fire/auth';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -11,9 +10,5 @@ export class LoginPageComponent {
   loggedInUserProfile: any;
 
   constructor(public authService: AuthService) {}
-
-  loginWithGoogle() {
-    this.authService.GoogleAuth();
-  }
 
 }
